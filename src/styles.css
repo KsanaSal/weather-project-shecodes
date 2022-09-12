@@ -1,0 +1,72 @@
+body {
+  background: linear-gradient(
+    320deg,
+    rgb(252, 234, 159) 19%,
+    rgb(135, 252, 242) 92%
+  );
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: "PT Serif", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgb(21, 21, 21);
+}
+h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+h1 {
+  margin: 0;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 700;
+}
+img {
+  width: 150px;
+}
+h3 {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: italic;
+}
+a {
+  text-decoration: none;
+}
+
+.main {
+  margin-top: 24px;
+  background-image: url(../src/image/background/kenrick-mills-1h2Pg97SXfA-unsplash.jpg);
+  background-size: cover;
+  padding: 16px;
+  border-radius: 25px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.form {
+  width: auto;
+  margin: 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.button-close {
+  margin-left: 10px;
+  padding: 15px;
+}
+.date {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.temp {
+  font-size: 58px;
+}
+.units {
+  font-size: 30px;
+}
