@@ -1,16 +1,30 @@
 {
-  "name": "wireframe-project",
-  "version": "1.0.0",
+  "name": "weather-project-shecodes",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.html",
+  "homepage": "https://KsanaSal.github.io/weather-project-shecodes",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /weather-project-shecodes/"
   },
-  "dependencies": { "axios": "0.27.2" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KsanaSal/weather-project-shecodes.git"
+  },
+  "keywords": [],
+  "author": "Oksana Salivon <oasalivon@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "modern-normalize": "^1.1.0"
+  },
   "devDependencies": {
-    "@babel/core": "7.2.0",
-    "parcel-bundler": "^1.6.1"
+    "@parcel/transformer-sass": "^2.6.0",
+    "buffer": "^6.0.3",
+    "parcel": "^2.6.0",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "posthtml-include": "^1.7.4",
+    "process": "^0.11.10"
   },
-  "keywords": []
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
