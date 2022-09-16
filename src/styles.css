@@ -6,7 +6,8 @@ body {
   );
   background-repeat: no-repeat;
   height: 100vh;
-  font-family: "PT Serif", serif;
+  overflow: hidden;
+  font-family: 'PT Serif', serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -39,7 +40,7 @@ a {
 
 .main {
   margin-top: 24px;
-  background-image: url(../src/image/background/kenrick-mills-1h2Pg97SXfA-unsplash.jpg);
+  background-image: url(../src/image/background/cloudy.jpg);
   background-size: cover;
   padding: 16px;
   border-radius: 25px;
@@ -69,4 +70,19 @@ a {
 }
 .units {
   font-size: 30px;
+}
+.by-line {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  text-shadow: 5px 7px 6px rgba(12, 12, 12, 0.4);
+}
+
+.link {
+  color: #d405ba;
+  transition: color 250ms ease-in-out;
+}
+
+.link:hover {
+  color: #24a915;
 }
