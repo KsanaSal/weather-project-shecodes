@@ -37,7 +37,10 @@ const weather = document.querySelector('#weather');
 const btnLocation = document.querySelector('#location');
 const backCardWeather = document.querySelectorAll('.card-weather');
 const weatherNow = document.querySelector('.weather-now');
-console.dir(weatherNow);
+const day = document.querySelector('.day');
+const date = document.querySelector('.date');
+const time = document.querySelector('.time');
+
 backCardWeather.forEach(cardItem => {
   cardItem.style.backgroundColor = 'rgba(212, 5, 186, 0.5)';
 });
@@ -49,17 +52,24 @@ function setData(data) {
   weather.innerHTML = data.weather[0].main;
   city.innerHTML = data.name;
   weatherNow.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
-
-  console.log(data);
-  console.log(
-    new Date(data.dt * 1000).toLocaleDateString('en-us', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      weekday: 'long',
-    })
-  );
+  day.innerHTML = new Date(data.dt * 1000).toLocaleDateString('en-us', {
+    weekday: 'long',
+  });
+  date.innerHTML = `${new Date(data.dt * 1000).toLocaleDateString('en-us', {
+    month: 'long',
+  })} ${new Date(data.dt * 1000).toLocaleDateString('en-us', {
+    day: '2-digit',
+  })}, ${new Date(data.dt * 1000).toLocaleDateString('en-us', {
+    year: 'numeric',
+  })}`;
+  time.innerHTML = `${new Date(data.dt * 1000).toLocaleTimeString('en-us', {
+    hour: '2-digit',
+    hour12: false,
+  })}:${new Date(data.dt * 1000).toLocaleTimeString('en-us', {
+    minute: '2-digit',
+  })}`;
 }
+
 form.addEventListener('submit', el => {
   el.preventDefault();
   getWeatherByCity(input.value).then(data => {
