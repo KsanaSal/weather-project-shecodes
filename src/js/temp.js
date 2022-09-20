@@ -8,6 +8,7 @@ const currentTemp = document.querySelector("#temperature");
 const celsiusLink = document.querySelector("#celsius-link");
 const fahrenheitLink = document.querySelector("#fahrenheit-link");
 
+
 const now = new Date();
 //  change day
 function formatDay() {

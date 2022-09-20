@@ -38,6 +38,10 @@ h3 {
 a {
   text-decoration: none;
 }
+p{
+  font-size: 16px;
+  margin-bottom: 4px;
+}
 
 .main {
   margin-top: 24px;
@@ -69,6 +73,7 @@ a {
 }
 .time {
   margin-bottom: 4px;
+  font-size: 16px;
 }
 .card-weather {
   box-shadow:  5px 8px 8px rgba(63, 7, 57, 0.6);

@@ -36,24 +36,34 @@ const speed = document.querySelector('#speed');
 const weather = document.querySelector('#weather');
 const btnLocation = document.querySelector('#location');
 const backCardWeather = document.querySelectorAll('.card-weather');
-console.log(backCardWeather);
-
-// backCardWeather.length.style.backgroundColor = 'rgba(212, 5, 186, 0.7)';
+const weatherNow = document.querySelector('.weather-now');
+console.dir(weatherNow);
 backCardWeather.forEach(cardItem => {
   cardItem.style.backgroundColor = 'rgba(212, 5, 186, 0.5)';
 });
+
 function setData(data) {
   temp.innerHTML = Math.round(data.main.temp);
   precip.innerHTML = Math.round(data.main.humidity);
   speed.innerHTML = Math.round(data.wind.speed);
   weather.innerHTML = data.weather[0].main;
   city.innerHTML = data.name;
+  weatherNow.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+
+  console.log(data);
+  console.log(
+    new Date(data.dt * 1000).toLocaleDateString('en-us', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      weekday: 'long',
+    })
+  );
 }
 form.addEventListener('submit', el => {
   el.preventDefault();
   getWeatherByCity(input.value).then(data => {
     setData(data);
-    // backCardWeather.style.backgroundColor = 'rgba(13, 110, 253, 0.7)';
     backCardWeather.forEach(cardItem => {
       cardItem.style.backgroundColor = 'rgba(13, 110, 253, 0.5)';
     });
@@ -65,7 +75,6 @@ function showPosition(pos) {
   const longitude = pos.coords.longitude;
   getWeatherByLocacion(latitude, longitude).then(data => {
     setData(data);
-    // backCardWeather.style.backgroundColor = 'rgba(13, 202, 240, 0.7)';
     backCardWeather.forEach(cardItem => {
       cardItem.style.backgroundColor = 'rgba(13, 202, 240, 0.5)';
     });
