@@ -1,0 +1,2 @@
+const e=document.querySelector("#temperature"),t=document.querySelector("#celsius-link"),n=document.querySelector("#fahrenheit-link");let r=!0;function l(){r?(t.style.color="#d405ba",n.style.color="#706e70"):(t.style.color="#706e70",n.style.color="#d405ba")}t.addEventListener("click",(t=>{var n;t.preventDefault(),r||(e.innerHTML=(n=+e.innerHTML,Math.round((n-32)/1.8)),r=!0,l())})),n.addEventListener("click",(t=>{var n;t.preventDefault(),r&&(e.innerHTML=(n=+e.innerHTML,Math.round(1.8*n+32)),r=!1,l())})),l();
+//# sourceMappingURL=index.a26855b5.js.map
