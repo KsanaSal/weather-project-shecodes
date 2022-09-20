@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
-const apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+const apiKey = 'c95d60a1e3adbeb286133f1ebebc2579';
 let url = `https://api.openweathermap.org/data/2.5/weather`;
 
 async function getWeatherByCity(city) {
@@ -27,15 +27,21 @@ async function getWeatherByLocacion(latitude, longitude) {
   }
 }
 
-const input = document.querySelector("input");
-const city = document.querySelector("h1");
-const form = document.querySelector("#search-form");
-const temp = document.querySelector("#temperature");
-const precip = document.querySelector("#precipitation");
-const speed = document.querySelector("#speed");
-const weather = document.querySelector("#weather");
-const btnLocation = document.querySelector("#location");
+const input = document.querySelector('input');
+const city = document.querySelector('h1');
+const form = document.querySelector('#search-form');
+const temp = document.querySelector('#temperature');
+const precip = document.querySelector('#precipitation');
+const speed = document.querySelector('#speed');
+const weather = document.querySelector('#weather');
+const btnLocation = document.querySelector('#location');
+const backCardWeather = document.querySelectorAll('.card-weather');
+console.log(backCardWeather);
 
+// backCardWeather.length.style.backgroundColor = 'rgba(212, 5, 186, 0.7)';
+backCardWeather.forEach(cardItem => {
+  cardItem.style.backgroundColor = 'rgba(212, 5, 186, 0.5)';
+});
 function setData(data) {
   temp.innerHTML = Math.round(data.main.temp);
   precip.innerHTML = Math.round(data.main.humidity);
@@ -43,25 +49,33 @@ function setData(data) {
   weather.innerHTML = data.weather[0].main;
   city.innerHTML = data.name;
 }
-form.addEventListener("submit", (el) => {
+form.addEventListener('submit', el => {
   el.preventDefault();
-  getWeatherByCity(input.value).then((data) => {
+  getWeatherByCity(input.value).then(data => {
     setData(data);
+    // backCardWeather.style.backgroundColor = 'rgba(13, 110, 253, 0.7)';
+    backCardWeather.forEach(cardItem => {
+      cardItem.style.backgroundColor = 'rgba(13, 110, 253, 0.5)';
+    });
   });
 });
 
 function showPosition(pos) {
   const latitude = pos.coords.latitude;
   const longitude = pos.coords.longitude;
-  getWeatherByLocacion(latitude, longitude).then((data) => {
+  getWeatherByLocacion(latitude, longitude).then(data => {
     setData(data);
+    // backCardWeather.style.backgroundColor = 'rgba(13, 202, 240, 0.7)';
+    backCardWeather.forEach(cardItem => {
+      cardItem.style.backgroundColor = 'rgba(13, 202, 240, 0.5)';
+    });
   });
 }
 
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-btnLocation.addEventListener("click", (evt) => {
+btnLocation.addEventListener('click', evt => {
   navigator.geolocation.getCurrentPosition(getCurrentPosition);
 });
 navigator.geolocation.getCurrentPosition(getCurrentPosition);

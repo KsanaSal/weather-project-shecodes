@@ -8,19 +8,20 @@ body {
   height: 100vh;
   overflow: hidden;
   font-family: 'PT Serif', serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
   color: rgb(21, 21, 21);
 }
 h2 {
   margin: 0;
+  margin-bottom: 4px;
   font-size: 20px;
   font-weight: 700;
 }
 h1 {
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   font-size: 24px;
   font-weight: 700;
 }
@@ -29,7 +30,7 @@ img {
 }
 h3 {
   margin: 0;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-size: 18px;
   font-weight: 700;
   font-style: italic;
@@ -54,6 +55,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 16px;
 }
 .button-close {
   margin-left: 10px;
@@ -61,9 +63,15 @@ a {
 }
 .date {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-size: 16px;
   font-weight: 500;
+}
+.time {
+  margin-bottom: 4px;
+}
+.card-weather {
+  box-shadow:  5px 8px 8px rgba(63, 7, 57, 0.6);
 }
 .temp {
   font-size: 58px;
@@ -84,5 +92,5 @@ a {
 }
 
 .link:hover {
-  color: #24a915;
+  color: #0d6efd;
 }
