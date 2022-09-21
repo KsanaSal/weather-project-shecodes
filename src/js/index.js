@@ -68,6 +68,7 @@ function setData(data) {
   })}:${new Date(data.dt * 1000).toLocaleTimeString('en-us', {
     minute: '2-digit',
   })}`;
+  console.log(data);
 }
 
 form.addEventListener('submit', el => {
