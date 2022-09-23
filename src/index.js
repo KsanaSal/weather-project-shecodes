@@ -29,7 +29,7 @@ function setData(data) {
   refs.speed.innerHTML = Math.round(data.wind.speed);
   refs.weather.innerHTML = data.weather[0].main;
   refs.city.innerHTML = data.name;
-  refs.weatherNow.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+  refs.weatherNow.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
   refs.day.innerHTML = new Date(data.dt * 1000).toLocaleDateString('en-us', {
     weekday: 'long',
   });
