@@ -58,9 +58,9 @@ function setData(data) {
 // Search city
 refs.form.addEventListener('submit', el => {
   el.preventDefault();
-  getWeatherByCity(input.value).then(data => {
+  getWeatherByCity(refs.input.value).then(data => {
     setData(data);
-    backCardWeather.forEach(cardItem => {
+    refs.backCardWeather.forEach(cardItem => {
       cardItem.style.backgroundColor = 'rgba(13, 110, 253, 0.5)';
     });
   });
