@@ -1,5 +1,9 @@
 import getWeatherByCity from './js/getWeather';
 import getWeatherByLocacion from './js/getWeatherLocacion';
+import getWeatherByDays from './js/getWeatherDays';
+import listDays from './js/cardWeatherDays';
+
+// listDays()
 
 const refs = {
   input: document.querySelector('input'),
@@ -24,6 +28,7 @@ refs.backCardWeather.forEach(cardItem => {
 
 // Change currently weather
 function setData(data) {
+  console.log(data);
   refs.temp.innerHTML = Math.round(data.main.temp);
   refs.precip.innerHTML = Math.round(data.main.humidity);
   refs.speed.innerHTML = Math.round(data.wind.speed);
@@ -52,13 +57,16 @@ function setData(data) {
   )}:${new Date(data.dt * 1000).toLocaleTimeString('en-us', {
     minute: '2-digit',
   })}`;
-  console.log(data);
 }
 
 // Search city
 refs.form.addEventListener('submit', el => {
   el.preventDefault();
   getWeatherByCity(refs.input.value).then(data => {
+    getWeatherByDays(data.coord.lat, data.coord.lon).then(coordData => {
+      console.log(coordData);
+      listDays(coordData.daily)
+    });
     setData(data);
     refs.backCardWeather.forEach(cardItem => {
       cardItem.style.backgroundColor = 'rgba(13, 110, 253, 0.5)';
