@@ -1,7 +1,8 @@
 const cardDay = document.querySelector('#cards-days');
 // const dayTitle = document.querySelector('.card-title');
 
-function listDays(list) {
+function listDays(list, style) {
+  console.log(style);
   console.log(list);
   cardDay.innerHTML = '';
   const days = list
@@ -23,7 +24,7 @@ function listDays(list) {
       const tempMin = Math.round(day.temp.min);
       console.log(day);
       return `<div class="col m-0 text-center">
-          <div class="card p-2 h-100 card-weather">
+          <div class="card p-2 h-100 card-weather ${style}">
             <h3 class="card-title">${dayTitle}</h3>
             <span class="date">${dataTitle}</span>
             <img class="weather-icon"

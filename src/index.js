@@ -14,17 +14,11 @@ const refs = {
   speed: document.querySelector('#speed'),
   weather: document.querySelector('#weather'),
   btnLocation: document.querySelector('#location'),
-  backCardWeather: document.querySelectorAll('.card-weather'),
   weatherNow: document.querySelector('.weather-now'),
   day: document.querySelector('.day'),
   date: document.querySelector('.date'),
   time: document.querySelector('.time'),
 };
-
-// Defining the style of the card
-refs.backCardWeather.forEach(cardItem => {
-  cardItem.style.backgroundColor = 'rgba(212, 5, 186, 0.5)';
-});
 
 // Change currently weather
 function setData(data) {
@@ -65,12 +59,9 @@ refs.form.addEventListener('submit', el => {
   getWeatherByCity(refs.input.value).then(data => {
     getWeatherByDays(data.coord.lat, data.coord.lon).then(coordData => {
       console.log(coordData);
-      listDays(coordData.daily)
+      listDays(coordData.daily, 'city-style');
     });
     setData(data);
-    refs.backCardWeather.forEach(cardItem => {
-      cardItem.style.backgroundColor = 'rgba(13, 110, 253, 0.5)';
-    });
   });
 });
 
@@ -79,10 +70,11 @@ function showPosition(pos) {
   const latitude = pos.coords.latitude;
   const longitude = pos.coords.longitude;
   getWeatherByLocacion(latitude, longitude).then(data => {
-    setData(data);
-    refs.backCardWeather.forEach(cardItem => {
-      cardItem.style.backgroundColor = 'rgba(13, 202, 240, 0.5)';
+    getWeatherByDays(data.coord.lat, data.coord.lon).then(coordData => {
+      // console.log(coordData);
+      listDays(coordData.daily, 'current-style');
     });
+    setData(data);
   });
 }
 
