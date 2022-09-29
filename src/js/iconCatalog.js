@@ -1,15 +1,15 @@
 const iconCatalog = {
   // Thunderstorm
-//   200: require('../image/animated/503-522-314-200-230d-rainy-day.svg'),
-//   201: require('../image/animated/201-211-221d-thunderstorms-day.svg'),
-//   202: require('../image/animated/202-231-thunderstorms.svg'),
-//   210: require('../image/animated/504-531-321-210-rainy.svg'),
-//   211: require('../image/animated/201-211-221d-thunderstorms-day.svg'),
-//   212: require('../image/animated/212-232-thunderstorm.svg'),
-//   221: require('../image/animated/201-211-221d-thunderstorms-day.svg'),
-//   230: require('../image/animated/503-522-314-200-230d-rainy-day.svg'),
-//   231: require('../image/animated/202-231-thunderstorms.svg'),
-//   232: require('../image/animated/212-232-thunderstorm.svg'),
+  200: require('../image/animated/503-522-314-200-230d-rainy-day.svg'),
+  201: require('../image/animated/201-211-221d-thunderstorms-day.svg'),
+  202: require('../image/animated/202-231-thunderstorms.svg'),
+  210: require('../image/animated/504-531-321-210-rainy.svg'),
+  211: require('../image/animated/201-211-221d-thunderstorms-day.svg'),
+  212: require('../image/animated/212-232-thunderstorm.svg'),
+  221: require('../image/animated/201-211-221d-thunderstorms-day.svg'),
+  230: require('../image/animated/503-522-314-200-230d-rainy-day.svg'),
+  231: require('../image/animated/202-231-thunderstorms.svg'),
+  232: require('../image/animated/212-232-thunderstorm.svg'),
 
   // Drizzle
 //   300: require('../image/animated/701-300-310d-fog-day.svg'),
