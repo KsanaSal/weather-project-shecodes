@@ -38,14 +38,16 @@ h3 {
 a {
   text-decoration: none;
 }
-p{
+p {
   font-size: 16px;
   margin-bottom: 4px;
 }
 
 .main {
   margin-top: 24px;
-  background-image: url(../src/image/background/cloudy.jpg);
+  max-width: 1024px;
+  background-image: url(../src/image/background/cloudy.jpg),
+  linear-gradient(145deg, rgb(234, 132, 201) 0%, rgb(166, 141, 227) 95%);
   background-size: cover;
   padding: 16px;
   border-radius: 25px;
@@ -61,10 +63,13 @@ p{
   justify-content: space-between;
   padding: 0 16px;
 }
-.button-close {
+.forcast {
+  color: #89147a;
+}
+/* .button-close {
   margin-left: 10px;
   padding: 15px;
-}
+} */
 .date {
   display: block;
   margin-bottom: 4px;
@@ -76,7 +81,7 @@ p{
   font-size: 16px;
 }
 .card-weather {
-  box-shadow:  5px 8px 8px rgba(63, 7, 57, 0.6);
+  box-shadow: 5px 8px 8px rgba(63, 7, 57, 0.6);
 }
 .temp {
   font-size: 58px;
@@ -84,36 +89,32 @@ p{
 .units {
   font-size: 30px;
 }
+
 .by-line {
   display: flex;
   justify-content: center;
   margin-top: 10px;
   text-shadow: 5px 7px 6px rgba(12, 12, 12, 0.4);
 }
-
 .link {
   color: #d405ba;
   transition: color 250ms ease-in-out;
 }
-
 .link:hover {
   color: #0d6efd;
 }
-
 .card-temp {
   display: flex;
   justify-content: center;
   /* text-align: center; */
 }
-
 .card-temp-max {
   margin-right: 4px;
-  color: #d405ba;
+  color: #89147a;
 }
 .card-temp-min {
-  color: rgba(212, 5, 186, 0.3);
+  color: rgba(137, 20, 122, 0.5);
 }
-
 .city-style {
   background-color: rgba(13, 110, 253, 0.5);
 }
