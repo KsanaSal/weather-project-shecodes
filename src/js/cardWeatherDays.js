@@ -17,19 +17,26 @@ function listDays(list) {
       })}, ${new Date(day.dt * 1000).toLocaleDateString('en-us', {
         year: 'numeric',
       })}`;
+      // const weatherIcon = require (`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`)
+      const cardTitle = day.weather[0].main;
+      const tempMax = Math.round(day.temp.max);
+      const tempMin = Math.round(day.temp.min);
       console.log(day);
       return `<div class="col m-0 text-center">
           <div class="card p-2 h-100 card-weather">
             <h3 class="card-title">${dayTitle}</h3>
             <span class="date">${dataTitle}</span>
-            <img
-              src="./image/icon/weather_sun_sunny_temperature_icon.png"
+            <img class="weather-icon"
+              src="https://openweathermap.org/img/wn/${day.weather[0].icon}.png"
               class="card-img-top w-75 m-auto"
               alt="Weather sunny"
             />
             <div class="card-body p-1">
-              <h3 class="card-title">Sunny day</h3>
-              <p class="card-text">XX℃</p>
+              <h3 class="card-title">${cardTitle}</h3>
+              <div class="card-temp">
+              <p class="card-temp-max">${tempMax}°</p>
+              <p class="card-temp-min">${tempMin}°</p>
+              </div>
             </div>
           </div>
         </div>`;

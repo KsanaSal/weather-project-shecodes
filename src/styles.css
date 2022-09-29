@@ -99,3 +99,17 @@ p{
 .link:hover {
   color: #0d6efd;
 }
+
+.card-temp {
+  display: flex;
+  justify-content: center;
+  /* text-align: center; */
+}
+
+.card-temp-max {
+  margin-right: 4px;
+  color: #d405ba;
+}
+.card-temp-min {
+  color: rgba(212, 5, 186, 0.3);
+}
