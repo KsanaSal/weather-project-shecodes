@@ -1,7 +1,10 @@
+import iconCatalog from "./iconCatalog";
+
 const cardDay = document.querySelector('#cards-days');
 // const dayTitle = document.querySelector('.card-title');
 
 function listDays(list, style) {
+  console.log(iconCatalog[200]);
   console.log(style);
   console.log(list);
   cardDay.innerHTML = '';
@@ -28,7 +31,7 @@ function listDays(list, style) {
             <h3 class="card-title">${dayTitle}</h3>
             <span class="date">${dataTitle}</span>
             <img class="weather-icon"
-              src="https://openweathermap.org/img/wn/${day.weather[0].icon}.png"
+              src="${iconCatalog[day.weather[0].id]}"
               class="card-img-top w-75 m-auto"
               alt="Weather sunny"
             />
