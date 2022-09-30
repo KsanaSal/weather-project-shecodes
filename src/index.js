@@ -29,7 +29,9 @@ function setData(data) {
   refs.speed.innerHTML = Math.round(data.wind.speed);
   refs.weather.innerHTML = data.weather[0].main;
   refs.city.innerHTML = data.name;
-  refs.weatherNow.src = `${iconCatalog[data.weather[0].id]}`;
+  refs.weatherNow.src = `https://raw.githubusercontent.com/KsanaSal/weather-project-shecodes/main/src/image/animated/${
+    iconCatalog[data.weather[0].id]
+  }`;
   refs.day.innerHTML = new Date(data.dt * 1000).toLocaleDateString('en-us', {
     weekday: 'long',
   });

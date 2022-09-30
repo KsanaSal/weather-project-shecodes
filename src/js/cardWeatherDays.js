@@ -1,4 +1,4 @@
-import iconCatalog from "./iconCatalog";
+import iconCatalog from './iconCatalog';
 
 const cardDay = document.querySelector('#cards-days');
 // const dayTitle = document.querySelector('.card-title');
@@ -31,7 +31,9 @@ function listDays(list, style) {
             <h3 class="card-title">${dayTitle}</h3>
             <span class="date">${dataTitle}</span>
             <img class="weather-icon"
-              src="${iconCatalog[day.weather[0].id]}"
+              src="https://raw.githubusercontent.com/KsanaSal/weather-project-shecodes/main/src/image/animated/${
+                iconCatalog[day.weather[0].id]
+              }"
               class="card-img-top w-75 m-auto"
               alt="Weather sunny"
             />
