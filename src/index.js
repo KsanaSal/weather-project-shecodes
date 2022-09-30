@@ -2,7 +2,7 @@ import getWeatherByCity from './js/getWeather';
 import getWeatherByLocacion from './js/getWeatherLocacion';
 import getWeatherByDays from './js/getWeatherDays';
 import listDays from './js/cardWeatherDays';
-import iconCatalog from './js/iconCatalog';
+import iconCatalogDay, {iconCatalogNight} from './js/iconCatalog';
 
 // listDays()
 
@@ -23,6 +23,9 @@ const refs = {
 
 // Change currently weather
 function setData(data) {
+  const weatherIcon = data.weather[0].icon.includes('d')
+        ? iconCatalogDay
+        : iconCatalogNight;
   console.log(data);
   refs.temp.innerHTML = Math.round(data.main.temp);
   refs.precip.innerHTML = Math.round(data.main.humidity);
@@ -30,7 +33,7 @@ function setData(data) {
   refs.weather.innerHTML = data.weather[0].main;
   refs.city.innerHTML = data.name;
   refs.weatherNow.src = `https://raw.githubusercontent.com/KsanaSal/weather-project-shecodes/main/src/image/animated/${
-    iconCatalog[data.weather[0].id]
+    weatherIcon[data.weather[0].id]
   }`;
   refs.day.innerHTML = new Date(data.dt * 1000).toLocaleDateString('en-us', {
     weekday: 'long',

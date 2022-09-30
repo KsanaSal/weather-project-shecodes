@@ -1,10 +1,10 @@
-import iconCatalog from './iconCatalog';
+import iconCatalogDay, { iconCatalogNight } from './iconCatalog';
 
 const cardDay = document.querySelector('#cards-days');
 // const dayTitle = document.querySelector('.card-title');
 
 function listDays(list, style) {
-  console.log(iconCatalog[200]);
+  console.log(iconCatalogDay[200]);
   console.log(style);
   console.log(list);
   cardDay.innerHTML = '';
@@ -21,7 +21,9 @@ function listDays(list, style) {
       })}, ${new Date(day.dt * 1000).toLocaleDateString('en-us', {
         year: 'numeric',
       })}`;
-      // const weatherIcon = require (`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`)
+      const weatherIcon = day.weather[0].icon.includes('d')
+        ? iconCatalogDay
+        : iconCatalogNight;
       const cardTitle = day.weather[0].main;
       const tempMax = Math.round(day.temp.max);
       const tempMin = Math.round(day.temp.min);
@@ -32,7 +34,7 @@ function listDays(list, style) {
             <span class="date">${dataTitle}</span>
             <img class="weather-icon"
               src="https://raw.githubusercontent.com/KsanaSal/weather-project-shecodes/main/src/image/animated/${
-                iconCatalog[day.weather[0].id]
+                weatherIcon[day.weather[0].id]
               }"
               class="card-img-top w-75 m-auto"
               alt="Weather sunny"
