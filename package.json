@@ -16,7 +16,7 @@
   "author": "Oksana Salivon <oasalivon@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@parcel/optimizer-css": "^2.7.0",
+    
     "axios": "^0.27.2",
     "modern-normalize": "^1.1.0"
   },
