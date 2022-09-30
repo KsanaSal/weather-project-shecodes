@@ -2,7 +2,7 @@ import getWeatherByCity from './js/getWeather';
 import getWeatherByLocacion from './js/getWeatherLocacion';
 import getWeatherByDays from './js/getWeatherDays';
 import listDays from './js/cardWeatherDays';
-import iconCatalogDay, {iconCatalogNight} from './js/iconCatalog';
+import iconCatalogDay, { iconCatalogNight } from './js/iconCatalog';
 
 // listDays()
 
@@ -19,13 +19,16 @@ const refs = {
   day: document.querySelector('.day'),
   date: document.querySelector('.date'),
   time: document.querySelector('.time'),
+  main: document.querySelector('.main'),
+  signature: document.querySelector('.by-line'),
+  loader: document.querySelector('.preloader'),
 };
 
 // Change currently weather
 function setData(data) {
   const weatherIcon = data.weather[0].icon.includes('d')
-        ? iconCatalogDay
-        : iconCatalogNight;
+    ? iconCatalogDay
+    : iconCatalogNight;
   console.log(data);
   refs.temp.innerHTML = Math.round(data.main.temp);
   refs.precip.innerHTML = Math.round(data.main.humidity);
@@ -77,7 +80,9 @@ function showPosition(pos) {
   const longitude = pos.coords.longitude;
   getWeatherByLocacion(latitude, longitude).then(data => {
     getWeatherByDays(data.coord.lat, data.coord.lon).then(coordData => {
-      // console.log(coordData);
+      refs.main.classList.remove('is-hidden');
+      refs.signature.classList.remove('is-hidden');
+      refs.loader.classList.add('is-hidden');
       listDays(coordData.daily, 'current-style');
     });
     setData(data);

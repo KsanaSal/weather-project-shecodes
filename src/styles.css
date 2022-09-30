@@ -1,3 +1,5 @@
+@import './loader';
+
 body {
   background: linear-gradient(
     320deg,
@@ -47,7 +49,7 @@ p {
   margin-top: 24px;
   max-width: 1024px;
   background-image: url(../src/image/background/cloudy.jpg),
-  linear-gradient(145deg, rgb(234, 132, 201) 0%, rgb(166, 141, 227) 95%);
+    linear-gradient(145deg, rgb(234, 132, 201) 0%, rgb(166, 141, 227) 95%);
   background-size: cover;
   padding: 16px;
   border-radius: 25px;
@@ -118,7 +120,10 @@ p {
 .city-style {
   background-color: rgba(13, 110, 253, 0.5);
 }
-
 .current-style {
   background-color: rgba(13, 202, 240, 0.5);
+}
+
+.is-hidden {
+  display: none;
 }
